@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.sampleardemo"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation "com.google.ar.sceneform.ux:sceneform-ux:1.15.0"
+    implementation "com.google.ar.sceneform:animation:1.15.0"
+    implementation "com.android.support:appcompat-v7:28.0.0"
+}
+
+
+sceneform.asset('sampledata/Models/Cat/Mesh_Cat.obj',
+        'default',
+        'sampledata/Models/Cat/Mesh_Cat.sfa',
+        'src/main/assets/Mesh_Cat')
+
+sceneform.asset('sampledata/Models/Dog/Mesh_Beagle.obj',
+        'default',
+        'sampledata/Models/Dog/Mesh_Beagle.sfa',
+        'src/main/assets/Mesh_Beagle')
+
+sceneform.asset('sampledata/Models/Andy/Andy.obj',
+        'default',
+        'sampledata/Models/Andy/Andy.sfa',
+        'src/main/assets/Andy')
+
+sceneform.asset('sampledata/Models/AnimatedAndy/andy_dance.fbx',
+        'default',
+        'sampledata/Models/AnimatedAndy/andy_dance.sfa',
+        'src/main/assets/andy_dance')
+
+sceneform.asset('sampledata/Models/AnimatedAndy/baseball-cap.gltf',
+        'default',
+        'sampledata/Models/AnimatedAndy/baseball-cap.sfa',
+        'src/main/assets/baseball-cap')
